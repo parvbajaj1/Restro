@@ -1,0 +1,51 @@
+name: restro
+description: A new Flutter project.
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.0.5 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_launcher_icons: ^0.13.1
+  flutter_svg: ^2.0.7  
+  fluttertoast: ^8.0.9
+  get: ^4.6.5
+  provider: ^6.0.5
+  google_nav_bar: ^5.0.6
+  
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  
+  assets:
+    - assets/icons/
+    - assets/logo/
+    - assets/images/
+
+
+
+fonts:
+  - family: Poppins
+    fonts:
+      - assets: fonts/Poppins-Regular.ttf
+        weight: 400 
+      - assets: fonts/Poppins-SemiBold.ttf
+        weight: 600 
+      - assets: fonts/Poppins-Medium.ttf
+        weight: 500 
+      - assets: fonts/Poppins-Bold.ttf
+        weight: 700  
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/logo/logo.svg"
+  min_sdk_android: 21 # android min sdk min:16, default 
