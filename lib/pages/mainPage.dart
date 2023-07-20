@@ -11,6 +11,7 @@ class MainPage extends StatelessWidget {
   MainPage({super.key});
   List<Categorymodel> categories = [];
   List<DietModel> diets = [];
+  // nothing to changes
   void _getInitialInfo() {
     categories = Categorymodel.getCategories();
     diets = DietModel.getDiets();
