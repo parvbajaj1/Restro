@@ -1,22 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:restro/pages/homePage.dart';
 import 'package:restro/widgets/appbar.dart';
 import 'package:restro/widgets/itemList.dart';
 import 'package:restro/widgets/orderSection.dart';
 import 'package:restro/widgets/searchField.dart';
 
+import '../controllers/cart_controller.dart';
 import '../modals/categorymodels.dart';
 import '../utils/contants.dart';
 
 class DetailPage extends StatelessWidget {
-  DetailPage({super.key, required this.id});
+  DetailPage({super.key, required this.id, required this.list});
   int? id;
+  RxList list;
 
   List<Categorymodel> categories = Categorymodel.getCategories();
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(CartController());
+
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: appBar(
@@ -70,6 +76,7 @@ class DetailPage extends StatelessWidget {
               ),
               orderSection(
                 sectionHeading: "Results",
+                sourcelist: list,
               ),
             ],
           ),

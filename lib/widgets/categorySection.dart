@@ -38,7 +38,8 @@ class categorySection extends StatelessWidget {
                     context,
                     PageRouteBuilder(
                         transitionDuration: Duration(milliseconds: 500),
-                        pageBuilder: (_, __, ___) => DetailPage(id: index))),
+                        pageBuilder: (_, __, ___) => DetailPage(
+                            id: index, list: categories[index].foodList))),
                 // MaterialPageRoute(
 
                 //   builder: (context) => DetailPage(id: index),

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
+import '../controllers/cart_controller.dart';
 import '../modals/categorymodels.dart';
 import '../modals/dietmodels.dart';
 import '../widgets/categorySection.dart';
@@ -11,6 +14,8 @@ class MainPage extends StatelessWidget {
   MainPage({super.key});
   List<Categorymodel> categories = [];
   List<DietModel> diets = [];
+  final controller = Get.put(CartController());
+
   // nothing to changes
   void _getInitialInfo() {
     categories = Categorymodel.getCategories();
@@ -36,7 +41,8 @@ class MainPage extends StatelessWidget {
           const SizedBox(
             height: 40,
           ),
-          orderSection(sectionHeading: "Explore"),
+          orderSection(
+              sectionHeading: "Explore", sourcelist: controller.orderitems),
         ],
       ),
     );

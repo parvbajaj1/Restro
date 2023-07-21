@@ -26,7 +26,7 @@ class recipePage extends StatelessWidget {
         onPressed: () {
           // GetX.addtolist(index);
 
-          controller.addtolist(index);
+          // controller.addtolist(index,sourcelist);
         },
         child: const Icon(
           Icons.add,

@@ -17,7 +17,7 @@ class myDrawer extends StatelessWidget {
                       onTap: () => Navigator.of(context).pop(),
                       child: Container(
                         margin: const EdgeInsets.only(top: 40),
-                        child: Icon(
+                        child: const Icon(
                           Icons.close,
                         ),
                       )),

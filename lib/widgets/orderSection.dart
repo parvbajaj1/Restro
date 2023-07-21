@@ -11,11 +11,10 @@ import 'package:restro/utils/contants.dart';
 import 'itemList.dart';
 
 class orderSection extends StatelessWidget {
-  orderSection({
-    super.key,
-    required this.sectionHeading,
-  });
+  orderSection(
+      {super.key, required this.sectionHeading, required this.sourcelist});
   String sectionHeading;
+  RxList sourcelist;
 
   @override
   Widget build(BuildContext context) {
@@ -40,33 +39,14 @@ class orderSection extends StatelessWidget {
           ),
           Expanded(
             child: ListView.builder(
-              itemCount: controller.orderitems.length,
+              itemCount: sourcelist.length,
               physics: NeverScrollableScrollPhysics(),
               itemBuilder: (context, index) => itemList(
                 ontap: () {
-                  // if (controller.Lateritems.isNotEmpty) {
-                  // for (var element in controller.Lateritems) {
-                  //   log('elements   ' + element.toString());
-                  //   log(controller.orderitems[index]['id'].toString());
-                  //   if (controller.orderitems[index]['id'] == element['id']) {
-                  //     // controller.Lateritems[index];
-                  //     log("exists");
-                  //     return;
-                  //   } else if (controller.orderitems[index]['id'] !=
-                  //       element['id']) {
-                  //     // controller.addtolist(index);
-                  //     log("not exists");
-                  //     // return;
-                  //   }
-                  // }
-                  // }
-                  //  else {
-                  controller.addtolist(index);
-                 
-                  // controller.addtolist(index);
-                  // }
+                  controller.addtolist(index, sourcelist);
+                  // controller.Lateritems.addAll(item)
                 },
-                cardlist: controller.orderitems,
+                cardlist: sourcelist,
                 index: index,
                 buttonColor: bg1,
                 buttonIcon: Icons.add_circle,
